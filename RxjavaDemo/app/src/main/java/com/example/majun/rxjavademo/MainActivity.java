@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.example.majun.rxjavademo.fragment.BeautyImageFragment;
+import com.example.majun.rxjavademo.fragment.NetWorkImageFragment;
 import com.example.majun.rxjavademo.fragment.PhotoFragment;
 
 import butterknife.Bind;
@@ -31,17 +33,35 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return new PhotoFragment();
+                switch (position) {
+                    case 0:
+                        return new PhotoFragment();
+                    case 1:
+                        return new NetWorkImageFragment();
+                    case 2:
+                        return new BeautyImageFragment();
+                    default:
+                        return null;
+                }
             }
 
             @Override
             public int getCount() {
-                return 1;
+                return 3;
             }
 
             @Override
             public CharSequence getPageTitle(int position) {
-                return "手机图片";
+                switch (position) {
+                    case 0:
+                        return getString(R.string.phone_image);
+                    case 1:
+                        return getString(R.string.network_image);
+                    case 2:
+                        return getString(R.string.beauty_image);
+                    default:
+                        return "";
+                }
             }
         });
         tabLayout.setupWithViewPager(viewPager);

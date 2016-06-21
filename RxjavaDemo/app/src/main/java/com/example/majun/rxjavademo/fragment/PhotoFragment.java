@@ -36,7 +36,7 @@ public class PhotoFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_photo, container, false);
         ButterKnife.bind(this, view);
-        //打开手机pictures的图片
+        //打开手机pictures的图片，使用RxJava的一些用法
         File folders = new File(Environment.getExternalStorageDirectory() + "/Pictures");
         Observable.just(folders).flatMap(new Func1<File, Observable<File>>() {
             @Override
@@ -67,7 +67,8 @@ public class PhotoFragment extends BaseFragment {
                     @Override
                     public void call(Bitmap bitmap) {
                         ImageView imageView = new ImageView(getActivity());
-                        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(400, 400);
+                        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
+                        layoutParams.setMargins(20,20,20,20);
                         imageView.setLayoutParams(layoutParams);
                         imageView.setImageBitmap(bitmap);
                         layout.addView(imageView);
@@ -79,5 +80,10 @@ public class PhotoFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public void requestNewData() {
+
     }
 }

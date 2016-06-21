@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RxjavaDemo</string>
+    <string name="phone_image">手机图片</string>
+    <string name="network_image">网络图片</string>
+    <string name="loading_failed">加载失败</string>
+    <string name="beauty_image">美女图片</string>
 </resources>
