@@ -8,8 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.example.majun.rxjavademo.fragment.BeautyImageFragment;
-import com.example.majun.rxjavademo.fragment.NetWorkImageFragment;
+import com.example.majun.rxjavademo.fragment.BeautyFragment;
+import com.example.majun.rxjavademo.fragment.NetWorkFragment;
 import com.example.majun.rxjavademo.fragment.PhotoFragment;
 
 import butterknife.Bind;
@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         return new PhotoFragment();
                     case 1:
-                        return new NetWorkImageFragment();
+                        return new NetWorkFragment();
                     case 2:
-                        return new BeautyImageFragment();
+                        return new BeautyFragment();
                     default:
                         return null;
                 }

@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.example.majun.rxjavademo.BaseFragment;
 import com.example.majun.rxjavademo.R;
 
 import java.io.File;
