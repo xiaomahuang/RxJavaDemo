@@ -127,6 +127,7 @@ public class BeautyFragment extends BaseFragment implements SuperSwipeRefreshLay
                                 Item item = new Item();
                                 item.description = itemDate;
                                 item.image_url = beauty.url;
+                                item._id = beauty._id;
                                 items.add(item);
                             } catch (ParseException e) {
                                 e.printStackTrace();

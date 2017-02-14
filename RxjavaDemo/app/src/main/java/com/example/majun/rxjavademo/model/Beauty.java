@@ -6,4 +6,5 @@ package com.example.majun.rxjavademo.model;
 public class Beauty {
     public String createdAt;
     public String url;
+    public String _id;
 }

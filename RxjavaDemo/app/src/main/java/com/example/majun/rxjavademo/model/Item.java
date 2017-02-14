@@ -6,4 +6,5 @@ package com.example.majun.rxjavademo.model;
 public class Item {
     public String description;
     public String image_url;
+    public String _id;
 }
